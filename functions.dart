@@ -39,3 +39,13 @@ void greet({required String name, int age = 18}) {
 void greetNullable({String? name}) {
   print('Hello ${name ?? 'Guest'}');
 }
+
+T Function(A) compose<A, B, T>(T Function(B) f, B Function(A) g) {
+  return (A x) => f(g(x));
+}
+
+String shout(String s) => s.toUpperCase();
+String exclaim(String s) => '$s!!!';
+
+final scream = compose(exclaim, shout);
+// print(scream('hello')); // HELLO!!!

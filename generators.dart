@@ -1,4 +1,3 @@
-
 // Iterable is a collection that can be iterated over, like a list or a set.
 // FUnctions that lazily produce a sequence of values are called generators.
 // The sync* keyword is used to define a synchronous generator function.
@@ -23,5 +22,7 @@ void main() {
   }
 
   print("Progressively printing numbers:");
-  asynchronousNaturalsTo(5).listen((n) => print(n)); // 0 1 2 3 4 5 (one per second)
+  asynchronousNaturalsTo(
+    5,
+  ).listen((n) => print(n)); // 0 1 2 3 4 5 (one per second)
 }
